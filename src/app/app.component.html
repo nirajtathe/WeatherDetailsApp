@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" routerLink="/home">In Touch Assignment</a>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/temp" routerLinkActive="active">Temperature</a></li>
+                <li><a routerLink="/pressure" routerLinkActive="active">Pressure</a></li>
+                <li><a routerLink="/humidity" routerLinkActive="active">Humidity</a></li>
+                <li><a routerLink="/wind" routerLinkActive="active">Wind</a></li>
+                <li><a routerLink="/cloud" routerLinkActive="active">Clouds</a></li>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+    </nav>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

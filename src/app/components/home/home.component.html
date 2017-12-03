@@ -1,0 +1,58 @@
+<h2 class="text-center">Welcome to Weather Details</h2>
+
+
+<div *ngIf="!this.weatherService.locationSet">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form (ngSubmit)="setLocationData(form)" #form="ngForm">
+
+            <div class="form-group">
+                <label for="postalCode">Postal Code (zip code)</label>
+                <input type="text" id="postalCode" ngModel name="postalCode" class="form-control"
+                  placeholder="Enter Postal Code" minlength="4" required #postalCode="ngModel">
+                  <br>
+                <span *ngIf="postalCode.invalid  && (postalCode.dirty || postalCode.touched)"
+                  class="alert alert-danger">
+                  Please Enter valid Postal Code</span>
+            </div>
+          
+          <div class="form-group">
+              <label for="countryCode">Country Code (Ex: India: IN)</label>
+              <input type="text" id="countryCode" ngModel name="countryCode" class="form-control"
+                placeholder="Enter Country Code" minlength="2" required #countryCode="ngModel">
+                <br>
+              <span *ngIf="countryCode.invalid && (countryCode.dirty || countryCode.touched)"
+                class="alert alert-danger">
+                Please Enter valid Country Code</span>
+          </div>
+          
+          <button type="submit" 
+            [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+          
+          <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+<div *ngIf="this.weatherService.locationSet && data!== undefined">
+  <div class="text-center">
+    <br>
+    <h3>Weather Details for {{data.name}} ( {{data.sys.country}} ): </h3>
+    <br>
+    <p>Temperature: {{data.main.temp}}</p>
+    <p>Minimum Temperature: {{data.main.temp_min}}</p>
+    <p>Maximum Temperature: {{data.main.temp_max}}</p>
+    <p>Pressure: {{data.main.pressure}}</p>
+    <p>Humidity: {{data.main.humidity}}</p>
+    <p>Wind - Speed: {{data.wind.speed}} , Degree: {{data.wind.deg}}</p>
+    <p>Clouds: {{data.clouds.all}}</p>
+  </div>
+</div>
+<div *ngIf="error !==undefined" >
+    <div class="text-center">
+      <p>Wrong Parameters given try Again.</p>
+      <p>Error Occured.</p>
+      <p><a (click)="errorNullify()">Click here</a> to set location again.</p>
+    </div>
+</div>
