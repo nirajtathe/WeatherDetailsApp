@@ -1,5 +1,6 @@
 # WeatherDetailsApp
 Angular 5 Application using Webpack
+
 This application uses the location if allowed by the user and display the weather details for that location.
 If the location is not allowed, then user needs to add the postal code (/zip code) and country code (Ex: IN for India). If the sata is valid then correct weather details will be displayed to the user.
 
