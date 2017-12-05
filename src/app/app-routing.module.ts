@@ -12,8 +12,6 @@ import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.co
 
 import { UrlGuardService } from './shared/url-guard.service';
 
-import { LearnChartsComponent } from './components/learnCharts/learnCharts.component';
-
 const appRoutes:Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: 'home' , component: HomeComponent },
@@ -22,7 +20,6 @@ const appRoutes:Routes = [
     { path: 'humidity', canActivate: [UrlGuardService], component: HumidityChartComponent },
     { path: 'wind', canActivate: [UrlGuardService], component: WindChartComponent },
     { path: 'cloud', canActivate: [UrlGuardService], component: CloudChartComponent},
-    { path: 'learn', component: LearnChartsComponent},
     { path: 'pageNotFound', component: PageNotFoundComponent},
     { path: '**', redirectTo: '/pageNotFound'}
 ];

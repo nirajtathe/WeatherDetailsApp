@@ -18,8 +18,6 @@ import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.co
 import { WeatherService } from './shared/weather.service';
 import { UrlGuardService } from './shared/url-guard.service';
 
-import { LearnChartsComponent } from './components/learnCharts/learnCharts.component';
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -36,8 +34,7 @@ import { LearnChartsComponent } from './components/learnCharts/learnCharts.compo
     HumidityChartComponent,
     WindChartComponent,
     CloudChartComponent,
-    PageNotFoundComponent,
-    LearnChartsComponent
+    PageNotFoundComponent
   ],
   providers: [ WeatherService, UrlGuardService ],
   bootstrap: [ AppComponent ]
